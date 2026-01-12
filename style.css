@@ -1,135 +1,245 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>شجرة العائلة</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --primary:#2563eb;
+  --danger:#dc2626;
+  --node-bg:#fff7ed;
+  --node-border:#b45309;
+}
 
-<body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">🌿</div>
-      <div class="brandText">
-        <div class="title">شجرة العائلة</div>
-        <div class="subtitle">عرض تفاعلي — أبناء تحت الأب</div>
-      </div>
-    </div>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    <div class="actions">
-      <input id="searchInput" class="search" type="search" placeholder="بحث بالاسم..." />
-      <button id="loginBtn" class="btn">🔐 دخول للتعديل</button>
-      <button id="logoutBtn" class="btn ghost hidden">خروج</button>
-    </div>
-  </header>
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.85);
+  backdrop-filter: blur(8px);
+  position:sticky; top:0; z-index:50;
+}
 
-  <main class="wrap">
+.brand{display:flex; align-items:center; gap:10px}
+.logo{
+  width:42px; height:42px; border-radius:12px;
+  display:grid; place-items:center;
+  background:#e0f2fe; border:1px solid var(--line);
+  font-size:20px;
+}
+.title{font-weight:900}
+.subtitle{font-size:12px; color:var(--muted)}
 
-    <!-- خانة الاسم المحدد -->
-    <section class="card selectedCard">
-      <div class="row">
-        <div class="label">الاسم المحدد:</div>
-        <div id="selectedNameText" class="value">—</div>
-      </div>
-      <div class="hint">اضغط على أي اسم في الشجرة لتحديث الخانة.</div>
-    </section>
+.actions{display:flex; align-items:center; gap:10px}
+.search{
+  width:min(360px, 48vw);
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  outline:none;
+}
+.search:focus{border-color:#93c5fd; box-shadow:0 0 0 3px rgba(147,197,253,.35)}
 
-    <!-- أدوات التعديل (تظهر فقط بعد كلمة السر) -->
-    <section id="editorPanel" class="card hidden">
-      <div class="panelTitle">وضع التعديل</div>
+.wrap{
+  width:min(1200px, 94vw);
+  margin:18px auto 28px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
 
-      <div class="grid2">
-        <div>
-          <label class="fieldLabel">اختيار شخص للتعديل</label>
-          <select id="editPersonSelect" class="field"></select>
-        </div>
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 8px 22px rgba(17,24,39,.06);
+  padding:14px;
+}
 
-        <div>
-          <label class="fieldLabel">اسم الشخص (اسم كامل)</label>
-          <input id="editNameInput" class="field" type="text" placeholder="مثال: صالح آل بعيج" />
-        </div>
+.selectedCard .row{
+  display:flex; align-items:center; gap:10px;
+  flex-wrap:wrap;
+}
+.selectedCard .label{color:var(--muted); font-weight:800}
+.selectedCard .value{font-weight:900; font-size:18px}
+.hint{margin-top:6px; color:var(--muted); font-size:12px}
 
-        <div>
-          <label class="fieldLabel">الأب</label>
-          <select id="editFatherSelect" class="field"></select>
-        </div>
+.toolbar{display:flex; gap:8px; flex-wrap:wrap}
 
-        <div>
-          <label class="fieldLabel">الأم (اختياري)</label>
-          <select id="editMotherSelect" class="field"></select>
-        </div>
-      </div>
+.btn{
+  border:1px solid var(--line);
+  background:#fff;
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:800;
+}
+.btn:hover{filter:brightness(.98)}
+.btn.small{padding:8px 10px; font-weight:900}
+.btn.ghost{background:transparent}
+.btn.primary{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+}
+.btn.danger{
+  background:var(--danger);
+  border-color:var(--danger);
+  color:#fff;
+}
+.hidden{display:none !important}
 
-      <div class="panelBtns">
-        <button id="saveEditBtn" class="btn primary">💾 حفظ تعديل (يولد JSON)</button>
-        <button id="deleteBtn" class="btn danger">🗑️ حذف شخص</button>
-      </div>
+.sep{border:none; border-top:1px solid var(--line); margin:14px 0}
 
-      <hr class="sep" />
+.panelTitle{font-weight:900; margin-bottom:10px}
+.grid2{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px;
+}
+@media (max-width: 800px){
+  .grid2{grid-template-columns:1fr}
+}
 
-      <div class="panelTitle">إضافة شخص جديد</div>
+.fieldLabel{display:block; font-size:12px; color:var(--muted); margin-bottom:6px; font-weight:800}
+.field{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  outline:none;
+}
+.field:focus{border-color:#93c5fd; box-shadow:0 0 0 3px rgba(147,197,253,.35)}
 
-      <div class="grid2">
-        <div>
-          <label class="fieldLabel">الاسم الكامل</label>
-          <input id="addNameInput" class="field" type="text" placeholder="مثال: محمد بن صالح" />
-        </div>
+.panelBtns{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.notice{
+  margin-top:12px;
+  background:#fffbeb;
+  border:1px dashed #f59e0b;
+  color:#92400e;
+  padding:10px 12px;
+  border-radius:12px;
+  font-size:13px;
+}
+.codebox{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  direction:ltr;
+}
 
-        <div>
-          <label class="fieldLabel">الجنس</label>
-          <select id="addGenderSelect" class="field">
-            <option value="M">ذكر</option>
-            <option value="F">أنثى</option>
-          </select>
-        </div>
+.treeCard{padding:0}
+.treeViewport{
+  height: min(72vh, 720px);
+  overflow:auto;
+  border-radius:16px;
+  padding:20px;
+  background:linear-gradient(180deg, #ffffff, #fafafa);
+  cursor:grab;
+  touch-action: pan-x pan-y; /* مهم للجوال */
+}
+.treeViewport:active{cursor:grabbing}
+.tree{
+  transform-origin: top right;
+  display:flex;
+  justify-content:center;
+  padding:10px 40px;
+}
 
-        <div>
-          <label class="fieldLabel">الأب</label>
-          <select id="addFatherSelect" class="field"></select>
-        </div>
+.node{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:120px;
+  padding:8px 12px;
+  border-radius:10px;
+  border:2px solid var(--node-border);
+  background:var(--node-bg);
+  font-weight:900;
+  cursor:pointer;
+  user-select:none;
+}
+.node[data-highlight="1"]{outline:4px solid rgba(37,99,235,.25)}
+.nodeSub{
+  display:block;
+  font-weight:700;
+  color:var(--muted);
+  font-size:11px;
+  margin-top:2px;
+  text-align:center;
+}
 
-        <div>
-          <label class="fieldLabel">الأم (اختياري)</label>
-          <select id="addMotherSelect" class="field"></select>
-        </div>
-      </div>
+.level{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+}
+.childrenRow{
+  display:flex;
+  gap:22px;
+  align-items:flex-start;
+  justify-content:center;
+  flex-wrap:nowrap;
+}
 
-      <div class="panelBtns">
-        <button id="addPersonBtn" class="btn primary">➕ إضافة (يولد JSON)</button>
-      </div>
+.personBlock{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  position:relative;
+}
 
-      <div class="notice">
-        <strong>ملاحظة:</strong> بعد أي تعديل/إضافة، سيظهر لك JSON محدث — انسخه والصقه في ملف <code>family.json</code> داخل GitHub ثم اعمل Commit.
-      </div>
-    </section>
+.personBlock::before{
+  content:"";
+  position:absolute;
+  top:-10px;
+  width:2px;
+  height:10px;
+  background:#94a3b8;
+}
+.personBlock.root::before{display:none}
 
-    <!-- شريط أدوات العرض -->
-    <section class="toolbar">
-      <button id="zoomInBtn" class="btn small">＋ تكبير</button>
-      <button id="zoomOutBtn" class="btn small">－ تصغير</button>
-      <button id="resetBtn" class="btn small ghost">↺ إعادة ضبط</button>
-    </section>
+.childrenRow{
+  position:relative;
+  padding-top:14px;
+}
+.childrenRow::before{
+  content:"";
+  position:absolute;
+  top:6px;
+  left:10px;
+  right:10px;
+  height:2px;
+  background:#94a3b8;
+}
 
-    <!-- منطقة الشجرة -->
-    <section class="card treeCard">
-      <div id="treeViewport" class="treeViewport" aria-label="عرض الشجرة">
-        <div id="tree" class="tree"></div>
-      </div>
-    </section>
+.childWrap{
+  position:relative;
+  padding-top:10px;
+}
+.childWrap::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:2px;
+  height:10px;
+  background:#94a3b8;
+}
 
-    <!-- نافذة JSON الناتج -->
-    <section id="outputPanel" class="card hidden">
-      <div class="panelTitle">JSON الناتج</div>
-      <textarea id="jsonOutput" class="codebox" rows="12" spellcheck="false"></textarea>
-      <div class="panelBtns">
-        <button id="copyJsonBtn" class="btn">📋 نسخ JSON</button>
-        <button id="closeOutputBtn" class="btn ghost">إغلاق</button>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="app.js"></script>
-</body>
-</html>

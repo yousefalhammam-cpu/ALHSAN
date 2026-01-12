@@ -98,8 +98,29 @@
         <button id="addPersonBtn" class="btn primary">➕ إضافة (يولد JSON)</button>
       </div>
 
+      <hr class="sep" />
+
+      <div class="panelTitle">استيراد مشجر كامل (CSV)</div>
+
+      <div class="grid2">
+        <div>
+          <label class="fieldLabel">ارفع ملف CSV / TXT (كل سطر: الأب,الابن)</label>
+          <input id="importFile" class="field" type="file" accept=".csv,.txt" />
+        </div>
+        <div>
+          <label class="fieldLabel">اسم الجذر (Root)</label>
+          <input id="importRootName" class="field" type="text" placeholder="مثال: حسن" />
+        </div>
+      </div>
+
+      <div class="panelBtns">
+        <button id="runImportBtn" class="btn primary">⬆️ توليد family.json من الملف</button>
+      </div>
+
       <div class="notice">
-        <strong>ملاحظة:</strong> بعد أي تعديل/إضافة، سيظهر لك JSON محدث — انسخه والصقه في ملف <code>family.json</code> داخل GitHub ثم اعمل Commit.
+        <strong>الصيغة:</strong> كل سطر يكون: <code>الأب,الابن</code><br/>
+        مثال: <code>حسن,دويس</code> ثم <code>دويس,صالح</code> ...<br/>
+        بعد التوليد: انسخ JSON والصقه في <code>family.json</code> داخل GitHub ثم Commit.
       </div>
     </section>
 

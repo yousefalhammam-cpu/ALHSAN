@@ -1,6 +1,9 @@
-// إعدادات كلمة السر (غيّرها)
+// ============================
+// كلمة السر (غيّرها)
+// ============================
 const FAMILY_PASSWORD = "YAM123";
 
+// قاعدة البيانات
 let db = null;
 let peopleById = new Map();
 let childrenByFather = new Map();
@@ -50,6 +53,7 @@ async function loadDB(){
   rebuildIndexes();
 }
 
+// بناء خرائط البحث
 function rebuildIndexes(){
   peopleById = new Map();
   childrenByFather = new Map();
@@ -57,6 +61,7 @@ function rebuildIndexes(){
   for(const p of db.people){
     peopleById.set(p.id, p);
   }
+
   for(const p of db.people){
     const f = p.father;
     if(!f) continue;
@@ -77,6 +82,7 @@ function buildTree(rootId){
     treeEl.innerHTML = `<div style="padding:20px;color:#b91c1c;font-weight:800">لم يتم العثور على rootId</div>`;
     return;
   }
+
   const level = document.createElement("div");
   level.className = "level";
   level.appendChild(renderPersonBlock(rootId, true));

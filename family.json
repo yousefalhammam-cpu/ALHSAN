@@ -1,16 +1,35 @@
 {
-  "rootId": "جامع_العائلة",
+  "rootId": "al_hassan",
   "people": [
-    { "id": "جامع_العائلة", "name": "جامع العائلة", "gender": "M" },
+    {
+      "id": "al_hassan",
+      "name": "آل حسن",
+      "gender": "M"
+    },
 
-    { "id": "آل_حسن", "name": "آل حسن", "gender": "M", "father": "جامع_العائلة" },
-    { "id": "آل_عبدالله", "name": "آل عبدالله", "gender": "M", "father": "جامع_العائلة" },
-    { "id": "آل_دويس", "name": "آل دويس", "gender": "M", "father": "جامع_العائلة" },
-
-    { "id": "دويس", "name": "دويس", "gender": "M", "father": "آل_دويس" },
-    { "id": "صالح", "name": "صالح", "gender": "M", "father": "دويس" },
-    { "id": "مصلح", "name": "مصلح", "gender": "M", "father": "صالح" },
-    { "id": "غانم", "name": "غانم", "gender": "M", "father": "صالح" }
+    {
+      "id": "allies",
+      "name": "حلفاء آل حسن",
+      "gender": "M",
+      "father": "al_hassan"
+    },
+    {
+      "id": "abu_malnah",
+      "name": "آل ابومالنه",
+      "gender": "M",
+      "father": "al_hassan"
+    },
+    {
+      "id": "quraisha",
+      "name": "آل قريشه",
+      "gender": "M",
+      "father": "al_hassan"
+    },
+    {
+      "id": "al_aji",
+      "name": "ال العجي",
+      "gender": "M",
+      "father": "al_hassan"
+    }
   ]
 }
-

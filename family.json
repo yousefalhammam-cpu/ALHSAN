@@ -1,0 +1,58 @@
+{
+  "rootId": "p1",
+  "people": [
+    {
+      "id": "p1",
+      "name": "دويس",
+      "gender": "M"
+    },
+    {
+      "id": "p2",
+      "name": "صالح",
+      "gender": "M",
+      "father": "p1"
+    },
+    {
+      "id": "p3",
+      "name": "غانم",
+      "gender": "M",
+      "father": "p2"
+    },
+    {
+      "id": "p4",
+      "name": "مصلح",
+      "gender": "M",
+      "father": "p2"
+    },
+    {
+      "id": "p5",
+      "name": "آل هادي آل محمد",
+      "gender": "M",
+      "father": "p2"
+    },
+    {
+      "id": "p6",
+      "name": "شلعان",
+      "gender": "M",
+      "father": "p3"
+    },
+    {
+      "id": "p7",
+      "name": "آل بعيج",
+      "gender": "M",
+      "father": "p3"
+    },
+    {
+      "id": "p8",
+      "name": "محمد",
+      "gender": "M",
+      "father": "p6"
+    },
+    {
+      "id": "p9",
+      "name": "صالح آل بعيج",
+      "gender": "M",
+      "father": "p7"
+    }
+  ]
+}

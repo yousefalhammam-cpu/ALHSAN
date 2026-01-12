@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>شجرة العائلة</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🌿</div>
+      <div class="brandText">
+        <div class="title">شجرة العائلة</div>
+        <div class="subtitle">عرض تفاعلي — أبناء تحت الأب</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <input id="searchInput" class="search" type="search" placeholder="بحث بالاسم..." />
+      <button id="loginBtn" class="btn">🔐 دخول للتعديل</button>
+      <button id="logoutBtn" class="btn ghost hidden">خروج</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- خانة الاسم المحدد -->
+    <section class="card selectedCard">
+      <div class="row">
+        <div class="label">الاسم المحدد:</div>
+        <div id="selectedNameText" class="value">—</div>
+      </div>
+      <div class="hint">اضغط على أي اسم في الشجرة لتحديث الخانة.</div>
+    </section>
+
+    <!-- أدوات التعديل (تظهر فقط بعد كلمة السر) -->
+    <section id="editorPanel" class="card hidden">
+      <div class="panelTitle">وضع التعديل</div>
+
+      <div class="grid2">
+        <div>
+          <label class="fieldLabel">اختيار شخص للتعديل</label>
+          <select id="editPersonSelect" class="field"></select>
+        </div>
+
+        <div>
+          <label class="fieldLabel">اسم الشخص (اسم كامل)</label>
+          <input id="editNameInput" class="field" type="text" placeholder="مثال: صالح آل بعيج" />
+        </div>
+
+        <div>
+          <label class="fieldLabel">الأب</label>
+          <select id="editFatherSelect" class="field"></select>
+        </div>
+
+        <div>
+          <label class="fieldLabel">الأم (اختياري)</label>
+          <select id="editMotherSelect" class="field"></select>
+        </div>
+      </div>
+
+      <div class="panelBtns">
+        <button id="saveEditBtn" class="btn primary">💾 حفظ تعديل (يولد JSON)</button>
+        <button id="deleteBtn" class="btn danger">🗑️ حذف شخص</button>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="panelTitle">إضافة شخص جديد</div>
+
+      <div class="grid2">
+        <div>
+          <label class="fieldLabel">الاسم الكامل</label>
+          <input id="addNameInput" class="field" type="text" placeholder="مثال: محمد بن صالح" />
+        </div>
+
+        <div>
+          <label class="fieldLabel">الجنس</label>
+          <select id="addGenderSelect" class="field">
+            <option value="M">ذكر</option>
+            <option value="F">أنثى</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="fieldLabel">الأب</label>
+          <select id="addFatherSelect" class="field"></select>
+        </div>
+
+        <div>
+          <label class="fieldLabel">الأم (اختياري)</label>
+          <select id="addMotherSelect" class="field"></select>
+        </div>
+      </div>
+
+      <div class="panelBtns">
+        <button id="addPersonBtn" class="btn primary">➕ إضافة (يولد JSON)</button>
+      </div>
+
+      <div class="notice">
+        <strong>ملاحظة:</strong> بعد أي تعديل/إضافة، سيظهر لك JSON محدث — انسخه والصقه في ملف <code>family.json</code> داخل GitHub ثم اعمل Commit.
+      </div>
+    </section>
+
+    <!-- شريط أدوات العرض -->
+    <section class="toolbar">
+      <button id="zoomInBtn" class="btn small">＋ تكبير</button>
+      <button id="zoomOutBtn" class="btn small">－ تصغير</button>
+      <button id="resetBtn" class="btn small ghost">↺ إعادة ضبط</button>
+    </section>
+
+    <!-- منطقة الشجرة -->
+    <section class="card treeCard">
+      <div id="treeViewport" class="treeViewport" aria-label="عرض الشجرة">
+        <div id="tree" class="tree"></div>
+      </div>
+    </section>
+
+    <!-- نافذة JSON الناتج -->
+    <section id="outputPanel" class="card hidden">
+      <div class="panelTitle">JSON الناتج</div>
+      <textarea id="jsonOutput" class="codebox" rows="12" spellcheck="false"></textarea>
+      <div class="panelBtns">
+        <button id="copyJsonBtn" class="btn">📋 نسخ JSON</button>
+        <button id="closeOutputBtn" class="btn ghost">إغلاق</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

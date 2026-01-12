@@ -1,124 +1,16 @@
 {
-  "rootId": "dahmash",
+  "rootId": "جامع_العائلة",
   "people": [
-    { "id": "dahmash", "name": "دهمش", "gender": "M" },
+    { "id": "جامع_العائلة", "name": "جامع العائلة", "gender": "M" },
 
-    { "id": "hassan", "name": "حسن", "gender": "M", "father": "dahmash" },
-    { "id": "abdullah", "name": "عبدالله", "gender": "M", "father": "dahmash" },
-    { "id": "dowais_family", "name": "دويـس", "gender": "M", "father": "dahmash" },
+    { "id": "آل_حسن", "name": "آل حسن", "gender": "M", "father": "جامع_العائلة" },
+    { "id": "آل_عبدالله", "name": "آل عبدالله", "gender": "M", "father": "جامع_العائلة" },
+    { "id": "آل_دويس", "name": "آل دويس", "gender": "M", "father": "جامع_العائلة" },
 
-    /* =========================
-       آل حسن (حسب الهيكل في PDF)
-       ========================= */
-    { "id": "h_allies", "name": "حلفاء آل حسن", "gender": "M", "father": "hassan" },
-
-    { "id": "h_homaylan", "name": "حميالن", "gender": "M", "father": "h_allies" },
-    { "id": "h_jamaher", "name": "جماهر", "gender": "M", "father": "h_allies" },
-    { "id": "h_hawkash", "name": "حوكاش", "gender": "M", "father": "h_allies" },
-
-    { "id": "h_murshid_family", "name": "آل مرشد بن حسن العديني", "gender": "M", "father": "h_allies" },
-    { "id": "h_qood", "name": "آل قعود", "gender": "M", "father": "h_allies" },
-    { "id": "h_jarman", "name": "آل جرمان", "gender": "M", "father": "h_qood" },
-
-    { "id": "h_shamsan", "name": "آل شمسان", "gender": "M", "father": "h_allies" },
-    { "id": "h_dalwan", "name": "آل دلوان", "gender": "M", "father": "h_shamsan" },
-
-    { "id": "h_hazam", "name": "حزم", "gender": "M", "father": "h_allies" },
-    { "id": "h_hashel", "name": "آل هاشل", "gender": "M", "father": "h_hazam" },
-    { "id": "h_mishal", "name": "مشعل", "gender": "M", "father": "h_hazam" },
-
-    { "id": "h_jadi", "name": "آل جدي", "gender": "M", "father": "h_allies" },
-    { "id": "h_hammam", "name": "آل همام", "gender": "M", "father": "h_jadi" },
-    { "id": "h_qahifah", "name": "آل قحيفه", "gender": "M", "father": "h_jadi" },
-
-    { "id": "h_abumalnah", "name": "آل ابومالنه", "gender": "M", "father": "hassan" },
-    { "id": "h_alfagih", "name": "آل الفقيه", "gender": "M", "father": "h_abumalnah" },
-    { "id": "h_hamad_jumhan", "name": "حمد جمحان", "gender": "M", "father": "h_alfagih" },
-
-    { "id": "h_quraisha", "name": "آل قريشه", "gender": "M", "father": "hassan" },
-    { "id": "h_aleji", "name": "ال العجي", "gender": "M", "father": "hassan" },
-
-    /* ===================================
-       تفاصيل أسماء (تم تجميعها تحت الفروع)
-       ملاحظة: الربط هنا للعرض حتى تزودني
-       بصور الشجرة لو تبغى نسب دقيق 100%
-       =================================== */
-
-    /* ---- آل مرشد (أسماء مذكورة) ---- */
-    { "id": "m_murshid", "name": "مرشد", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_almuzahani", "name": "المزحاني", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_hassan", "name": "حسن", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_abdullah", "name": "عبدالله", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_shamsan", "name": "شمسان", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_muammar", "name": "معمر", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_majli", "name": "مجلي", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_rajih", "name": "راجح", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_mohammad", "name": "محمد", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_ahmad_mohammad_saleh", "name": "احمد محمد صالح", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_rajih_hamad", "name": "راجح حمد", "gender": "M", "father": "h_murshid_family" },
-    { "id": "m_ali_hussain_mane", "name": "علي حسين مانع", "gender": "M", "father": "h_murshid_family" },
-
-    /* ---- حوكاش (أسماء تحت صفحة حوكاش) ---- */
-    { "id": "hk_dalwan_shamsan", "name": "دلوان شمسان", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_ali_saleh", "name": "علي صالح", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_saleh", "name": "صالح", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_ashiq_abdullah", "name": "عاشق عبدالله", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_hussain", "name": "حسين", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_mohammad_hassan_suwaidan", "name": "محمد حسن سويدان", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_hassan_hussain_ali_saud_ashiq", "name": "حسن حسين علي سعود عاشق", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_mohammad_hussain_hadi_saleh", "name": "محمد حسين هادي صالح", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_mohammad_hussain_hadi_mane", "name": "محمد حسين هادي مانع", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_huwail", "name": "حويل", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_hussain_hamad_almusalli", "name": "حسين حمد المصلي", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_shamsan_ashwan_aldais", "name": "شمسان عشوان الديس", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_hamad_hoban", "name": "حمد حوبان", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_mohammad_nasser_saleh", "name": "محمد ناصر صالح", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_hamad_ali", "name": "حمد علي", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_mosleh", "name": "مصلح", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_nasser_saleh", "name": "ناصر صالح", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_samhan", "name": "سمحان", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_ali_saleh_2", "name": "علي صالح", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_mohammad_2", "name": "محمد", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_ali_mohammad_hadi_hussain", "name": "علي محمد هادي حسين", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_hadi_atiq", "name": "هادي عتيق", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_nasser_salem_shamsan_mohammad_hadi", "name": "ناصر سالم شمسان محمد هادي", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_abdullah_2", "name": "عبدالله", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_hamad", "name": "حمد", "gender": "M", "father": "h_hawkash" },
-    { "id": "hk_hassan_saleh", "name": "حسن صالح", "gender": "M", "father": "h_hawkash" },
-
-    /* ---- حزم (أسماء تحت صفحة حزم) ---- */
-    { "id": "hz_mn3r", "name": "منعر", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_mohammad", "name": "محمد", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_hammam_mn3r", "name": "همام منعر", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_mohammad_ali", "name": "محمد علي", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_hassan", "name": "حسن", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_saleh", "name": "صالح", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_harqal_yahya", "name": "هرقل يحي", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_yahya", "name": "يحي", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_harqal_hamad", "name": "هرقل حمد", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_hadi_mohammad", "name": "هادي محمد", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_hussain_hadi_yahya_mohammad_ali", "name": "حسين هادي يحي محمد علي", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_hadi_hammam", "name": "هادي همام", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_mansour_saleh_hussain", "name": "منصور صالح حسين", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_saleh_hassan_mohammad_yahya", "name": "صالح حسن محمد يحي", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_hammam_mane", "name": "همام مانع", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_mishal", "name": "مشعل", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_salem", "name": "سالم", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_harqal", "name": "هرقل", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_hamad_nasser_mn3r", "name": "حمد ناصر منعر", "gender": "M", "father": "h_hazam" },
-    { "id": "hz_qahifah", "name": "قحيفه", "gender": "M", "father": "h_hazam" },
-
-    /* ==================
-       آل عبدالله (مؤقت)
-       ================== */
-    { "id": "a_branch", "name": "فروع آل عبدالله (أضف الأسماء تحتها)", "gender": "M", "father": "abdullah" },
-
-    /* ==================
-       دويس (مختصر)
-       ================== */
-    { "id": "d_dowais", "name": "دويس", "gender": "M", "father": "dowais_family" },
-    { "id": "d_saleh", "name": "صالح", "gender": "M", "father": "d_dowais" },
-    { "id": "d_mosleh", "name": "مصلح", "gender": "M", "father": "d_saleh" },
-    { "id": "d_ghanim", "name": "غانم", "gender": "M", "father": "d_saleh" }
+    { "id": "دويس", "name": "دويس", "gender": "M", "father": "آل_دويس" },
+    { "id": "صالح", "name": "صالح", "gender": "M", "father": "دويس" },
+    { "id": "مصلح", "name": "مصلح", "gender": "M", "father": "صالح" },
+    { "id": "غانم", "name": "غانم", "gender": "M", "father": "صالح" }
   ]
 }
+

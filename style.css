@@ -149,7 +149,7 @@ body{
   padding:20px;
   background:linear-gradient(180deg, #ffffff, #fafafa);
   cursor:grab;
-  touch-action: pan-x pan-y; /* مهم للجوال */
+  touch-action: pan-x pan-y;
 }
 .treeViewport:active{cursor:grabbing}
 .tree{
@@ -242,4 +242,5 @@ body{
   height:10px;
   background:#94a3b8;
 }
+
 

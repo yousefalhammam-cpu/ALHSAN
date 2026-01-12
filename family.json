@@ -1,53 +1,27 @@
 {
   "rootId": "root",
   "people": [
-    { "id": "root", "name": "يام / جامع العوائل", "gender": "M" },
+    { "id": "root", "name": "جامع العائلة", "gender": "M" },
 
     { "id": "fam_hassan", "name": "آل حسن", "gender": "M", "father": "root" },
     { "id": "fam_abdullah", "name": "آل عبدالله", "gender": "M", "father": "root" },
     { "id": "fam_dowais", "name": "آل دويس", "gender": "M", "father": "root" },
 
-    { "id": "h_allies", "name": "حلفاء آل حسن", "gender": "M", "father": "fam_hassan" },
-    { "id": "h_hawkash", "name": "حوكاش", "gender": "M", "father": "h_allies" },
-    { "id": "h_al_murshid", "name": "آل مرشد بن حسن العديني", "gender": "M", "father": "h_allies" },
-    { "id": "h_al_quood", "name": "آل قعود", "gender": "M", "father": "h_allies" },
-    { "id": "h_al_jurman", "name": "آل جرمان", "gender": "M", "father": "h_al_quood" },
-    { "id": "h_al_shamsan", "name": "آل شمسان", "gender": "M", "father": "h_allies" },
-    { "id": "h_al_dalwan", "name": "آل دلوان", "gender": "M", "father": "h_al_shamsan" },
-    { "id": "h_hazam", "name": "حزم", "gender": "M", "father": "h_allies" },
-    { "id": "h_al_hashel", "name": "آل هاشل", "gender": "M", "father": "h_hazam" },
-    { "id": "h_mishal", "name": "مشعل", "gender": "M", "father": "h_hazam" },
-    { "id": "h_al_jadi", "name": "آل جدي", "gender": "M", "father": "h_allies" },
-    { "id": "h_al_hammam", "name": "آل همام", "gender": "M", "father": "h_al_jadi" },
-    { "id": "h_al_qahifa", "name": "آل قحيفه", "gender": "M", "father": "h_al_jadi" },
-    { "id": "h_abu_malnah", "name": "آل أبو مالنه", "gender": "M", "father": "fam_hassan" },
-    { "id": "h_al_faqih", "name": "آل الفقيه", "gender": "M", "father": "h_abu_malnah" },
-    { "id": "h_hmd_jumhan", "name": "حمد جمحان", "gender": "M", "father": "h_al_faqih" },
-    { "id": "h_al_quraisha", "name": "آل قريشه", "gender": "M", "father": "fam_hassan" },
-    { "id": "h_al_ajy", "name": "آل العجي", "gender": "M", "father": "fam_hassan" },
+    /* ========= آل حسن ========= */
+    { "id": "h_hassan", "name": "حسن", "gender": "M", "father": "fam_hassan" },
+    { "id": "h_ahmad", "name": "أحمد", "gender": "M", "father": "h_hassan" },
+    { "id": "h_saleh", "name": "صالح", "gender": "M", "father": "h_hassan" },
 
-    { "id": "a_placeholder", "name": "فروع آل عبدالله (قيد الإدخال)", "gender": "M", "father": "fam_abdullah" },
+    /* ========= آل عبدالله ========= */
+    { "id": "a_abdullah", "name": "عبدالله", "gender": "M", "father": "fam_abdullah" },
+    { "id": "a_mohammad", "name": "محمد", "gender": "M", "father": "a_abdullah" },
+    { "id": "a_ali", "name": "علي", "gender": "M", "father": "a_abdullah" },
 
+    /* ========= آل دويس ========= */
     { "id": "d_dowais", "name": "دويس", "gender": "M", "father": "fam_dowais" },
     { "id": "d_saleh", "name": "صالح", "gender": "M", "father": "d_dowais" },
-
-    { "id": "d_ghanim", "name": "غانم", "gender": "M", "father": "d_saleh" },
     { "id": "d_mosleh", "name": "مصلح", "gender": "M", "father": "d_saleh" },
-    { "id": "d_shalaan", "name": "شلعان", "gender": "M", "father": "d_saleh" },
-    { "id": "d_hadi", "name": "هادي", "gender": "M", "father": "d_saleh" },
-    { "id": "d_baej", "name": "آل بعيج", "gender": "M", "father": "d_saleh" },
-
-    { "id": "d_bozai", "name": "بوزي", "gender": "M", "father": "d_ghanim" },
-    { "id": "d_barak", "name": "براك", "gender": "M", "father": "d_ghanim" },
-    { "id": "d_dasmah", "name": "دسمه", "gender": "M", "father": "d_ghanim" },
-    { "id": "d_sahlol", "name": "سحلول", "gender": "M", "father": "d_ghanim" },
-
-    { "id": "d_al_hadi_mohammad", "name": "آل هادي آل محمد", "gender": "M", "father": "d_hadi" },
-    { "id": "d_al_taieh_netash", "name": "آل تايه / آل نتاش", "gender": "M", "father": "d_saleh" },
-    { "id": "d_al_shweil", "name": "آل شويل", "gender": "M", "father": "d_saleh" },
-    { "id": "d_al_mukaymir", "name": "آل مكيمر", "gender": "M", "father": "d_saleh" },
-    { "id": "d_al_muslim", "name": "آل مسلم", "gender": "M", "father": "d_saleh" },
-
-    { "id": "misc_yam", "name": "بطون مذكورة في الوثيقة (جشم / سلمـة / ذهل / هندي / كهلان...)", "gender": "M", "father": "root" }
+    { "id": "d_ghanim", "name": "غانم", "gender": "M", "father": "d_saleh" }
   ]
 }
+
